@@ -15,7 +15,7 @@ RUN curl -fsSL https://downloads.ioncube.com/loader_downloads/ioncube_loaders_li
     rm -rf ioncube.tar.gz ioncube
 
 # Ajouter IonCube dans un fichier de configuration séparé
-RUN echo "zend_extension=ioncube_loader_lin_8.1.so" > /etc/php8/conf.d/00_ioncube.ini
+RUN echo "/usr/lib/php8/modules/zend_extension=ioncube_loader_lin_8.1.so" > /etc/php8/conf.d/00_ioncube.ini
 
 # Copier Composer depuis l'image Composer officielle
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
